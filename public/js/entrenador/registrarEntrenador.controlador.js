@@ -30,7 +30,7 @@ function registrarEntrenador() {
             document.querySelector('#lblIdNError').classList.add('hide');
         }
 
-        if(!validarId(parseInt(aTrainerData[0].value)&&!aTrainerData[0].validationMessage == "Debes introducir un número.")){
+        if(!validarId(parseInt(aTrainerData[0].value))&&!(aTrainerData[0].validationMessage == "Debes introducir un número.")){
             aTrainerData[0].classList.remove('error_input');
         }else{
             aTrainerData[0].classList.add('error_input');
@@ -53,12 +53,8 @@ function registrarEntrenador() {
 
         if(aTrainerData[2].value>15 && aTrainerData[2].value<80){
             aTrainerData[2].classList.remove('error_input');
-           /* document.querySelector('#lblEdadError').classList.add('hide');
-            document.querySelector('#lblEdad2Error').classList.add('hide');*/
         }else{
             aTrainerData[2].classList.add('error_input');
-            /*document.querySelector('#lblEdadError').classList.remove('hide');
-            document.querySelector('#lblEdad2Error').classList.remove('hide');*/
             bError = true;
         }
 

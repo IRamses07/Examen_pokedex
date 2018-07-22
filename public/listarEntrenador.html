@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokedex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <div id="titleHeader">
+        <h1>
+            Pokedex
+        </h1>
+    </div>
+    <header>
+
+        <nav id="opcionesNavegador">
+            <span>
+                <a href="registrarPokemon.html">Registro de Pokémon</a>
+            </span>
+            <span>
+                <a href="listarPokemon.html">Lista de Pokémon</a>
+            </span>
+            <span>
+                <a href="registrarEntrenador.html">Registro de Entrenadores</a>
+            </span>
+            <span>
+                <a href="listarEntrenador.html">Lista de Entrenadores</a>
+            </span>
+            <span>
+                <a href="asociarPokemon.html">Capturar Pokémon</a>
+            </span>
+        </nav>
+
+    </header>
+    <main>
+        <h2 class="tituloNormal">Entrenadores</h2>
+
+            <input type="text" id="nptFiltro">
+  
+
+        <table id="tblTrainers">
+            <thead>
+        
+                <th>Número de entrenador</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+<footer>
+
+</footer>
+<script src="./js/jquery-3.3.1.js"></script>
+<script src="./js/entrenador/entrenador.servicio.js"></script>
+<script src="./js/entrenador/listarEntrenador.controlador.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>

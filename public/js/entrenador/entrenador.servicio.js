@@ -52,3 +52,18 @@ function getTrainerData() {
 
     return respuesta;
 }
+
+function setLocalTrainer() {
+    let trainerList = getTrainerData();
+    localStorage.setItem('trainerListLS', JSON.stringify(trainerList));
+}
+
+function getLocalTrainer() {
+
+    let trainerList = JSON.parse(localStorage.getItem('trainerListLS'));
+
+    if (trainerList == null) {
+        trainerList = localStorage.setItem('trainerListLS', JSON.stringify(getLocalTrainer()));;
+    }
+    return trainerList;
+}
