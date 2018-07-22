@@ -131,7 +131,10 @@ padding: 5px 0 5px 5px;
 
 #btnRegistrarPokemon{
     width: 31%;
+}
 
+#btnRegistrarEntrenador{
+    width: 31%;
 }
 
 .error_input{
@@ -148,4 +151,16 @@ padding: 5px 0 5px 5px;
 
 .hide{
 display: none;
+}
+
+.nptRFormulario{
+    width: 30%;
+}
+
+.sltTipos{
+    width: 31%;
+}
+
+.sltSexo{
+    width: 31%;
 }

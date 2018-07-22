@@ -1,5 +1,5 @@
 let aPokemonData = getPokemonData();
-eNumber = /[0-9]+/;
+let eStringNumber = /[0-9A-Za-záéíóúñÑÁÉÍÓÚ+-]+/;
 setSelects();
 let aPokeData = document.querySelectorAll("input");
 document.querySelector('#btnRegistrarPokemon').addEventListener('click', registrarPokemon);
@@ -52,20 +52,30 @@ function registrarPokemon() {
             document.querySelector('#lblIdNError').classList.add('hide');
         }
 
-        if (!validarPokedex(parseInt(aPokeData[0].value)) && eNumber.test(aPokeData[0].value)) {
+        if (!validarPokedex(parseInt(aPokeData[0].value)) && !aPokeData[0].validationMessage == "Debes introducir un número.") {
             aPokeData[0].classList.remove('error_input');
         } else {
             aPokeData[0].classList.add('error_input');
         }
 
         if (!validarNombrePokemon(aPokeData[1].value)) {
-            aPokeData[1].classList.remove('error_input');
             document.querySelector('#lblNombreRError').classList.add('hide');
-
         } else {
-            aPokeData[1].classList.add('error_input');
             document.querySelector('#lblNombreRError').classList.remove('hide');
             bError = true;
+        }
+
+        if (eStringNumber.test(aPokeData[1].value)) {
+            document.querySelector('#lblNombreCErro').classList.add('hide');
+        } else {
+            document.querySelector('#lblNombreCErro').classList.remove('hide');
+            bError = true;
+        }
+
+        if(eStringNumber.test(aPokeData[1].value) && !validarNombrePokemon(aPokeData[1].value)){
+            aPokeData[1].classList.remove('error_input');
+        }else{
+            aPokeData[1].classList.add('error_input');
         }
 
         //validar caracteres especiales...

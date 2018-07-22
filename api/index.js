@@ -58,15 +58,14 @@ app.use( function(req, res, next) {
  * Exportams todas las rutas dentro del index.js
  */
 const pokemon = require('./components/pokemon/pokemon.route');
-
-/*const entrenador= require('./components/entrenador/entrenador.route');*/
+const entrenador= require('./components/entrenador/entrenador.route');
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */
 app.use('/api', pokemon);
 //app.use('/api', usuarios); **Ejemplo**
-/*app.use('/api',entrenador);*/
+app.use('/api',entrenador);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

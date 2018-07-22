@@ -41,44 +41,37 @@
 
     </header>
     <main>
-        <h2 class="tituloNormal">Registro de Pokémon</h2>
+        <h2 class="tituloNormal">Registro de entrenador</h2>
 
         <form id="whiteBox">
-            <h3 class="subTitulo">Información sobre el Pokémon</h3>
+            <h3 class="subTitulo">Información del entrenador</h3>
             <div class="divData">
-                <input class="nptRFormulario" type="number" placeholder="Número en la Pokedex" required>
+                <input class="nptRFormulario" type="number" placeholder="Número de entrenador" required>
                 <div>
                     <label for="" class="hide lblError" id="lblIdRError">*Este número ya se encuentra registrado.</label>
                 </div>
-                <div id="divErrorNuemeros">
-                    <label for="" class="hide lblError" id="lblIdNError">*Ingresar solo números</label>
+                <div id="divErrorNumeros">
+                    <label for="" class="hide lblError" id="lblIdNError">*Ingresar solo números.</label>
                 </div>
             </div>
             <div class="divData">
-                <input class="nptRFormulario" type="text" placeholder="Nombre del Pokémon" required>
-                <div>
-                    <label for="" class="hide lblError" id="lblNombreRError">*Este pokémon ya se encuentra registrado.</label>
-                </div>
-                <div>
-                    <label for="" class="hide lblError" id="lblNombreCErro">*No ingresar caracteres especiales.</label>
-                </div>
+                <input class="nptRFormulario" type="text" placeholder="Nombre del entrenador" required>
             </div>
             <div class="divData">
                 <div class="divData">
-                    <select class="sltTipos" id="sltTipos1" required>
-                        <option value="" hidden>-Seleccione el primer tipo-</option>
-                    </select>
-                    <!-- <input class="nptRFormulario" type="text" placeholder="Tipo del Pokémon" required> -->
+                     <input class="nptRFormulario" type="number" placeholder="Edad" required>
+                     <label for="" class="hide lblError" id="lblEdadError">*Debes ser mayor a 15 años.</label>
+                     <label for="" class="hide lblError" id="lblEdad2Error">*Debes ser menor a 80 años.</label>
                 </div>
                 <div class="divData">
-                    <select class="sltTipos" id="sltTipos2">
-                            <option value="" hidden>-Seleccione el segundo tipo-</option>
-                            <option value= "">No disponible</option>
+                    <select name="" class="sltSexo" id="sltGenero" required>
+                        <option value="" hidden>-Seleccione su sexo-</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
                     </select>
-                    <!--<input class="nptRFormulario" type="text" placeholder="Segundo tipo del Pokémon (opcional)" required>-->
                 </div>
             </div>
-            <button id="btnRegistrarPokemon" type="button" class="btnDesign">Registrar</button>
+            <button id="btnRegistrarEntrenador" type="button" class="btnDesign">Registrar</button>
             <div id="rightBox">
                 <button id="uploadImageBtn" type="button" class="btnDesign">Subir imagen</button>
             </div>
@@ -90,8 +83,8 @@
 
 </footer>
 <script src="./js/jquery-3.3.1.js"></script>
-<script src="./js/pokemon/pokemon.servicio.js"></script>
-<script src="./js/pokemon/registrarPokemon.controlador.js"></script>
+<script src="./js/entrenador/entrenador.servicio.js"></script>
+<script src="./js/entrenador/registrarEntrenador.controlador.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-</html>
+</html> 
