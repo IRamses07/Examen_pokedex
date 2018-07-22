@@ -125,9 +125,10 @@ body{
     margin: 10px 0 20px 0;
 }
 
-input{
+input, select{
 padding: 5px 0 5px 5px;
 }
+
 #btnRegistrarPokemon{
     width: 31%;
 

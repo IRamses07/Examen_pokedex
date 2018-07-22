@@ -29,16 +29,10 @@
                 <a href="listarPokemon.html">Lista de Pokémon</a>
             </span>
             <span>
-                <a href="buscarPokemon.html">Busqueda de Pokémon</a>
-            </span>
-            <span>
                 <a href="registrarEntrenador.html">Registro de Entrenadores</a>
             </span>
             <span>
                 <a href="listarEntrenador.html">Lista de Entrenadores</a>
-            </span>
-            <span>
-                <a href="buscarEntrenador.html">Busqueda de Entrenadores</a>
             </span>
             <span>
                 <a href="asociarPokemon.html">Capturar Pokémon</a>
@@ -56,7 +50,7 @@
                 <div>
                     <label for="" class="hide lblError" id="lblIdRError">*Este número ya se encuentra registrado.</label>
                 </div>
-                <div>
+                <div id="divErrorNuemeros">
                     <label for="" class="hide lblError" id="lblIdNError">*Ingresar solo números</label>
                 </div>
             </div>
@@ -71,15 +65,22 @@
             </div>
             <div class="divData">
                 <div class="divData">
-                    <input class="nptRPokemon" type="text" placeholder="Tipo del Pokémon" required>
+                    <select class="sltTipos" id="sltTipos1" required>
+                        <option value="" hidden>-Seleccione el primer tipo-</option>
+                    </select>
+                    <!-- <input class="nptRPokemon" type="text" placeholder="Tipo del Pokémon" required> -->
                 </div>
                 <div class="divData">
-                    <input class="nptRPokemon" type="text" placeholder="Segundo tipo del Pokémon (opcional)" required>
+                    <select class="sltTipos" id="sltTipos2">
+                            <option value="" hidden>-Seleccione el segundo tipo-</option>
+                            <option value= "">No disponible</option>
+                    </select>
+                    <!--<input class="nptRPokemon" type="text" placeholder="Segundo tipo del Pokémon (opcional)" required>-->
                 </div>
             </div>
-            <button id="btnRegistrarPokemon" class="btnDesign">Registrar</button>
+            <button id="btnRegistrarPokemon" type="button" class="btnDesign">Registrar</button>
             <div id="rightBox">
-                <button id="uploadImageBtn" class="btnDesign">Subir imagen</button>
+                <button id="uploadImageBtn" type="button" class="btnDesign">Subir imagen</button>
             </div>
         </form>
     </main>

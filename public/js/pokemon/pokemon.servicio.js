@@ -1,4 +1,5 @@
-function setPokemonData(pInfoPokemon) {
+
+function setPokemonData(pokedex, nombre, tipo1, tipo2) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrar_pokemon',
@@ -7,10 +8,10 @@ function setPokemonData(pInfoPokemon) {
         dataType: 'json',
         async: false,
         data: {
-            pokedex_id: pInfoPokemon[0].value,
-            nombre: pInfoPokemon[1].value,
-            tipo1: pInfoPokemon[2].value,
-            tipo2: pInfoPokemon[3].value,
+            pokedex_id: pokedex,
+            nombre: nombre,
+            tipo1: tipo1,
+            tipo2: tipo2,
             /*foto: 'http://res.cloudinary.com/dtz8agoc3/image/upload/v1531452055/perfil.png'*/ //cambiar
         }
     });
@@ -51,3 +52,19 @@ function getPokemonData() {
 
     return respuesta;
 }
+
+function setLocalPokemon() {
+    let listaPokemons = getPokemonData();
+    localStorage.setItem('listaPokemonLS', JSON.stringify(listaPokemons));
+}
+
+function getLocalPokemon() {
+
+    let listaPokemons = JSON.parse(localStorage.getItem('listaPokemonLS'));
+
+    if (listaPokemons == null) {
+        listaPokemons = localStorage.setItem('listaPokemonLS', JSON.stringify(getPokemonData()));;
+    }
+    return listaPokemons;
+}
+

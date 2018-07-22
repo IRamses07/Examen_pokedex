@@ -29,16 +29,10 @@
                 <a href="listarPokemon.html">Lista de Pokémon</a>
             </span>
             <span>
-                <a href="buscarPokemon.html">Busqueda de Pokémon</a>
-            </span>
-            <span>
                 <a href="registrarEntrenador.html">Registro de Entrenadores</a>
             </span>
             <span>
                 <a href="listarEntrenador.html">Lista de Entrenadores</a>
-            </span>
-            <span>
-                <a href="buscarEntrenador.html">Busqueda de Entrenadores</a>
             </span>
             <span>
                 <a href="asociarPokemon.html">Capturar Pokémon</a>
@@ -50,17 +44,16 @@
         <h2 class="tituloNormal">Pokémones</h2>
         <select name="" id="sltTipos">
             <option value="" hidden>-Seleccione una opción-</option>
-            <option value="">Nombre</option>
-            <option value="">Tipo</option>
-            <input type="text">
+            <option value="">Ninguno</option>
+            <input type="text" id="nptFiltro">
         </select>
 
         <table id="tblPokemones">
             <thead>
-                <th>Foto</th>
+        
                 <th>Número de la pokedex</th>
                 <th>Nombre</th>
-                <th>Tipo 1</th>
+                <th>Tipo</th>
             </thead>
             <tbody>
 
