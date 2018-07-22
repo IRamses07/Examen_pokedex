@@ -1,0 +1,23 @@
+{
+  "name": "examen",
+  "version": "1.0.0",
+  "description": "Examen1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ramses",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "express": "^4.16.3",
+    "express-middleware": "^3.1.0",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "path": "^0.12.7",
+    "server-static": "^2.0.5"
+  }
+}

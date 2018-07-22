@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokedex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/listarPokemon.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <div id="titleHeader">
+        <h1>
+            Pokedex
+        </h1>
+    </div>
+    <header>
+
+        <div id="opcionesNavegador">
+            <span>
+                <a href="registrarPokemon.html">Registro de Pokémon</a>
+            </span>
+            <span>
+                <a href="listarPokemon.html">Lista de Pokémon</a>
+            </span>
+            <span>
+                <a href="buscarPokemon.html">Busqueda de Pokémon</a>
+            </span>
+            <span>
+                <a href="registrarEntrenador.html">Registro de Entrenadores</a>
+            </span>
+            <span>
+                <a href="listarEntrenador.html">Lista de Entrenadores</a>
+            </span>
+            <span>
+                <a href="buscarEntrenador.html">Busqueda de Entrenadores</a>
+            </span>
+            <span>
+                <a href="asociarPokemon.html">Capturar Pokémon</a>
+            </span>
+        </div>
+
+    </header>
+    <main>
+        <h2 class="tituloNormal">Pokémones</h2>
+        <select name="" id="sltTipos">
+            <option value="" hidden>-Seleccione una opción-</option>
+            <option value="">Nombre</option>
+            <option value="">Tipo</option>
+            <input type="text">
+        </select>
+
+        <table id="tblPokemones">
+            <thead>
+                <th>Foto</th>
+                <th>Número de la pokedex</th>
+                <th>Nombre</th>
+                <th>Tipo 1</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+<footer>
+
+</footer>
+<script src="./js/jquery-3.3.1.js"></script>
+<script src="./js/pokemon/pokemon.servicio.js"></script>
+<script src="./js/pokemon/listarPokemon.controlador.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>
