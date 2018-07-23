@@ -40,16 +40,18 @@
     </header>
     <main>
         <h2 class="tituloNormal">Pokémones</h2>
-        <select name="" id="sltTipos">
-            <option value="" hidden>-Seleccione una opción-</option>
-            <option value="">Ninguno</option>
+        <div class="divDatos">
+            <label for="">Buscar por nombre: </label>
             <input type="text" id="nptFiltro">
-        </select>
-
+            <select name="" id="sltTipos" class="sltFiltro">  
+                <option value="" hidden>-Seleccione un tipo-</option>
+                <option value="">Ninguno</option>
+            </select>
+        </div>
         <div id="mainContainer">
 
         </div>
-         <!--<table id="tblPokemones">
+        <!--<table id="tblPokemones">
             <thead>
         
                 <th>Número de la pokedex</th>

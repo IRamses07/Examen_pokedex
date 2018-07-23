@@ -42,45 +42,47 @@
         <h2 class="tituloNormal">Registro de Pokémon</h2>
 
         <form id="whiteBox">
-            <h3 class="subTitulo">Información sobre el Pokémon</h3>
-            <div class="divData">
-                <input class="nptRFormulario" type="number" placeholder="Número en la Pokedex" required>
-                <div>
-                    <label for="" class="hide lblError" id="lblIdRError">*Este número ya se encuentra registrado.</label>
-                </div>
-                <div id="divErrorNuemeros">
-                    <label for="" class="hide lblError" id="lblIdNError">*Ingresar solo números</label>
-                </div>
-            </div>
-            <div class="divData">
-                <input class="nptRFormulario" type="text" placeholder="Nombre del Pokémon" required>
-                <div>
-                    <label for="" class="hide lblError" id="lblNombreRError">*Este pokémon ya se encuentra registrado.</label>
-                </div>
-                <div>
-                    <label for="" class="hide lblError" id="lblNombreCErro">*No ingresar caracteres especiales.</label>
-                </div>
-            </div>
-            <div class="divData">
+            <div class=fLeft>
+                <h3 class="subTitulo">Información sobre el Pokémon</h3>
                 <div class="divData">
-                    <select class="sltTipos" id="sltTipos1" required>
-                        <option value="" hidden>-Seleccione el primer tipo-</option>
-                    </select>
-                    <!-- <input class="nptRFormulario" type="text" placeholder="Tipo del Pokémon" required> -->
+                    <input class="nptRFormulario" type="number" placeholder="Número en la Pokedex" required>
+                    <div>
+                        <label for="" class="hide lblError" id="lblIdRError">*Este número ya se encuentra registrado.</label>
+                    </div>
+                    <div id="divErrorNuemeros">
+                        <label for="" class="hide lblError" id="lblIdNError">*Ingresar solo números</label>
+                    </div>
                 </div>
                 <div class="divData">
-                    <select class="sltTipos" id="sltTipos2">
+                    <input class="nptRFormulario" type="text" placeholder="Nombre del Pokémon" required>
+                    <div>
+                        <label for="" class="hide lblError" id="lblNombreRError">*Este pokémon ya se encuentra registrado.</label>
+                    </div>
+                    <div>
+                        <label for="" class="hide lblError" id="lblNombreCErro">*No ingresar caracteres especiales.</label>
+                    </div>
+                </div>
+                <div class="divData">
+                    <div class="divData">
+                        <select class="sltTipos" id="sltTipos1" required>
+                            <option value="" hidden>-Seleccione el primer tipo-</option>
+                        </select>
+                        <!-- <input class="nptRFormulario" type="text" placeholder="Tipo del Pokémon" required> -->
+                    </div>
+                    <div class="divData">
+                        <select class="sltTipos" id="sltTipos2">
                             <option value="" hidden>-Seleccione el segundo tipo-</option>
-                            <option value= "">No disponible</option>
-                    </select>
-                    <!--<input class="nptRFormulario" type="text" placeholder="Segundo tipo del Pokémon (opcional)" required>-->
+                            <option value="">No disponible</option>
+                        </select>
+                        <!--<input class="nptRFormulario" type="text" placeholder="Segundo tipo del Pokémon (opcional)" required>-->
+                    </div>
                 </div>
+                <button id="btnRegistrarPokemon" type="button" class="btnDesign">Registrar</button>
             </div>
-            <button id="btnRegistrarPokemon" type="button" class="btnDesign">Registrar</button>
             <div id="rightBox">
-                    <div class="img_container">
-                            <img id="txtImagen" src="https://image.ibb.co/fzAwDd/pokeball.jpg" alt="Foto">
-                        </div>
+                <div class="img_container">
+                    <img id="txtImagen" src="https://image.ibb.co/fzAwDd/pokeball.jpg" alt="Foto">
+                </div>
                 <button id="uploadImageBtn" type="button" class="btnDesign">Subir imagen</button>
             </div>
         </form>
