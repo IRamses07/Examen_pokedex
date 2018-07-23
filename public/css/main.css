@@ -194,7 +194,7 @@ display: none;
 
 .newDataContainer{
     display: inline-block;
-    margin: 0 10px 20px 10px;
+    margin: 0 27px 20px 27px;
     background:#fff;
     padding: 10px;
     border: 1px #BEBEBE solid;
@@ -210,8 +210,63 @@ display: none;
 .lblInfo{
     display: block;
     font-size: 14px;
+    margin: 0 0 5px 0;
 }
 
 .btnCard{
     width: 100%;
+}
+
+#pokemonsPopUp{
+position: absolute;
+padding: 0 15px 0 15px;
+/*height: 500px;*/
+width: 600px;
+background: #fff;
+top: 50%;
+left: 50%;
+transform: translateX(-50%)translateY(-50%);
+border-radius: 10px;
+border: 1px solid #BEBEBE;
+}
+
+.dataContainer{
+    width: 33%;
+    display: inline-block;
+}
+
+.btnClose{
+    background: #E3350D;
+    color: #000;
+    width: 45px;
+    height: 20px;
+    position: absolute; 
+    right: 0px;
+    top:0px;
+    outline: none;
+    border: none;
+    border-radius: 0 10px 0 0;
+}
+
+.btnClose:hover{
+    cursor: pointer;
+    background: #CA1C00;
+}
+
+.spnTitle{
+    display: block;
+    font-size: 18px;
+    margin: 50px 0 30px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnPopUp{
+    display: block;
+    width: 50%; 
+    margin: 30px auto 20px auto; 
+}
+
+.divDatos{
+    margin-bottom: 20px;
 }

@@ -53,6 +53,34 @@ function getTrainerData() {
     return respuesta;
 }
 
+function setPokemonsAdded(pId, pokedex_id, nombre) {
+
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/asignar_pokemon',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+            _id: pId,
+            pokedex_id: pokedex_id,
+            nombre: nombre
+        }
+    });
+
+    peticion.done(function (response) {
+        console.log('Registro bien');
+        respuesta = response;
+    });
+
+    peticion.fail(function (response) {
+        console.log('registro mal');
+    });
+
+    return respuesta;
+}
+
 function setLocalTrainer() {
     let trainerList = getTrainerData();
     localStorage.setItem('trainerListLS', JSON.stringify(trainerList));

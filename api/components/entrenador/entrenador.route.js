@@ -14,4 +14,9 @@ router.route('/listar_trainer')
         trainer.listar(req, res);
     });
 
+router.route('/asignar_pokemon')
+    .post(function (req, res) {
+        trainer.asignar_pokemon(req, res);
+    });
+
 module.exports = router;

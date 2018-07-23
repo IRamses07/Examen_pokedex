@@ -6,8 +6,11 @@ let trainerSchema = new mongoose.Schema({
     nombre: {type: String, required: true},
     edad: {type: Number, required: true},
     sexo: {type: String, required: true},
-    foto: {type: String}
-
+    foto: {type: String},
+    pokemon: [{
+        pokedex_id: {type: Number, required: true},
+        nombre: {type: String, required: true},
+    }]
 });
 
 module.exports = mongoose.model('Trainer', trainerSchema);

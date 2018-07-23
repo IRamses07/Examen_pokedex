@@ -3,7 +3,7 @@ setLocalTrainer();
 document.querySelector('#nptFiltro').addEventListener('keyup', trainersList);
 let trainerList = getLocalTrainer();
 trainersList();
-
+let listaPokemon = getPokemonData();
 function trainersList() {
 
     let trainersFiltrados = [];
@@ -70,7 +70,8 @@ function trainersList() {
         capturarButton.classList.add('btnDesign');
         capturarButton.classList.add('btnCard');
         capturarButton.innerHTML = "Capturar pokémon";
-        /*capturarButton.addEventListener('click', mostrarEvaluacion)*/
+        capturarButton.dataset.id = trainersFiltrados[i]['_id'];
+        capturarButton.addEventListener('click', mostrarPokemons);
 
         /*verPokemones = document.createElement('button');
         verPokemones.type = "button";
@@ -86,6 +87,78 @@ function trainersList() {
         mainContainer.appendChild(newDataContainer);
 
     }
+}
+
+function mostrarPokemons() {
+    trainerId = this.dataset.id;
+    pokemonsPopUp.innerHTML = '';
+    pokemonsPopUp = document.querySelector('#pokemonsPopUp');
+    pokemonsPopUp.classList.remove('hide');
+
+    spnTitle = document.createElement('span');
+    spnTitle.innerHTML = "Seleccione los pokémones que desea capturar";
+    spnTitle.classList.add('spnTitle');
+
+    pokemonsPopUp.appendChild(spnTitle);
+
+    for (let i = 0; i < getPokemonData().length; i++) {
+        dataContainer = document.createElement('div');
+        dataContainer.classList.add('dataContainer');
+
+        checkPokemons = document.createElement('input');
+        checkPokemons.type = "checkbox";
+        checkPokemons.name = "pokemones";
+        checkPokemons.value = listaPokemon[i]['pokedex_id'];
+
+        lblPokemons = document.createElement('label');
+        lblPokemons.innerHTML = getPokemonData()[i]['nombre'];
+        dataContainer.appendChild(checkPokemons)
+        dataContainer.appendChild(lblPokemons);
+        pokemonsPopUp.appendChild(dataContainer);
+    }
+
+    btnClose = document.createElement('button');
+    btnClose.type = "button";
+    btnClose.innerHTML = "X";
+    btnClose.classList.add('btnClose');
+    btnClose.id = "btnClose";
+
+    btnCapturar = document.createElement('button');
+    btnCapturar.type = "button";
+    btnCapturar.innerHTML = "Capturar";
+    btnCapturar.classList.add('btnDesign');
+    btnCapturar.classList.add('btnPopUp');
+    btnCapturar.id = "btnCapturar";
+
+    pokemonsPopUp.appendChild(btnCapturar);
+    pokemonsPopUp.appendChild(btnClose);
+
+    document.querySelector('#btnClose').addEventListener('click', function () { pokemonsPopUp.classList.add('hide') });
+    document.querySelector('#btnCapturar').addEventListener('click', function () { agregarPokemon(trainerId) });
+
+}
+
+function agregarPokemon(trainerId) {
+
+    let checkBoxes = document.querySelectorAll('input[name=pokemones]:checked');
+    let misPokemones = [];
+    for (let i = 0; i < checkBoxes.length; i++) {
+        for (let j = 0; j < listaPokemon.length; j++) {
+            if (checkBoxes[i].value == listaPokemon[j]['pokedex_id']) {
+                misPokemones.push(listaPokemon[j]);
+            }
+        }
+    }
+    for (let i = 0; i < misPokemones.length; i++) {
+        setPokemonsAdded(trainerId, misPokemones[i]['pokedex_id'], misPokemones[i]['nombre']);
+    }
+    pokemonsPopUp.classList.add('hide');
+    swal({
+        title: "Captura exitosa",
+        text: "Has capturado los pokemones exitosamente.",
+        icon: "success",
+        button: "Ok",
+    });
 }
 
 

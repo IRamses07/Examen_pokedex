@@ -28,3 +28,31 @@ module.exports.listar = function (req, res) {
             res.send(trainer);
         });
 };
+
+module.exports.asignar_pokemon = function (req, res) {
+
+    trainerModel.update({
+            _id: req.body._id
+        }, {
+            $push: {
+                'pokemon': {
+                    pokedex_id: req.body.pokedex_id,
+                    nombre: req.body.nombre
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({
+                    success: false,
+                    msg: 'No se pudo Signar el proyecto, ocurrió el siguiente error' + error
+                });
+            } else {
+                res.json({
+                    success: true,
+                    msg: 'El Proyecto se asignó con éxito'
+                });
+            }
+        }
+    )
+};
