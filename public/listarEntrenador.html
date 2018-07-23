@@ -33,21 +33,21 @@
             <span>
                 <a href="listarEntrenador.html">Lista de Entrenadores</a>
             </span>
-            <span>
-                <a href="asociarPokemon.html">Capturar Pokémon</a>
-            </span>
         </nav>
 
     </header>
     <main>
         <h2 class="tituloNormal">Entrenadores</h2>
 
-            <input type="text" id="nptFiltro">
-  
+        <input type="text" id="nptFiltro">
 
-        <table id="tblTrainers">
+        <div id="mainContainer">
+
+            </div>
+
+        <!-- <table id="tblTrainers">
             <thead>
-        
+
                 <th>Número de entrenador</th>
                 <th>Nombre</th>
                 <th>Edad</th>
@@ -57,7 +57,7 @@
             <tbody>
 
             </tbody>
-        </table>
+        </table> -->
 
     </main>
 
@@ -66,6 +66,9 @@
 
 </footer>
 <script src="./js/jquery-3.3.1.js"></script>
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="js/servicioImagen.js"></script>
 <script src="./js/entrenador/entrenador.servicio.js"></script>
 <script src="./js/entrenador/listarEntrenador.controlador.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

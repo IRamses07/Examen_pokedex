@@ -3,6 +3,7 @@ let eStringNumber = /[0-9A-Za-záéíóúñÑÁÉÍÓÚ+-]+/;
 setSelects();
 let aPokeData = document.querySelectorAll("input");
 document.querySelector('#btnRegistrarPokemon').addEventListener('click', registrarPokemon);
+
 function setSelects() {
     let aTipos = ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"];
     for (let i = 0; i < aTipos.length; i++) {
@@ -78,8 +79,6 @@ function registrarPokemon() {
             aPokeData[1].classList.add('error_input');
         }
 
-        //validar caracteres especiales...
-
 
         if (!bError) {
             swal({
@@ -89,7 +88,8 @@ function registrarPokemon() {
                 button: "Ok",
             });
 
-            setPokemonData(aPokeData[0].value, aPokeData[1].value, document.querySelector('#sltTipos1').value, document.querySelector('#sltTipos2').value);
+            setPokemonData(aPokeData[0].value, aPokeData[1].value, document.querySelector('#sltTipos1').value, 
+            document.querySelector('#sltTipos2').value, imagenUrl);
             limpiar();
 
         }

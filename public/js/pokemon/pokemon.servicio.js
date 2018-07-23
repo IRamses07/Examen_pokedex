@@ -1,5 +1,5 @@
 
-function setPokemonData(pokedex, nombre, tipo1, tipo2) {
+function setPokemonData(pokedex, nombre, tipo1, tipo2, imagen) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrar_pokemon',
@@ -12,7 +12,7 @@ function setPokemonData(pokedex, nombre, tipo1, tipo2) {
             nombre: nombre,
             tipo1: tipo1,
             tipo2: tipo2,
-            /*foto: 'http://res.cloudinary.com/dtz8agoc3/image/upload/v1531452055/perfil.png'*/ //cambiar
+            foto: imagen
         }
     });
 
@@ -39,6 +39,40 @@ function getPokemonData() {
         async: false,
         data: {
 
+        }
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+    });
+
+    peticion.fail(function (response) {
+
+    });
+
+    return respuesta;
+}
+
+function cambiarFoto(imagenUrl) {
+    let respuesta = '';
+
+    if (getCurrentUserData()['rol'] == 'profesor') {
+        ced = getCurrentUserData()['cedula'];
+        id = getCurrentUserData()['_id'];
+    } else {
+        ced = getVerMasLS()['cedula'];
+        id = getVerMasLS()['_id'];
+    }
+
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/cambiar_foto_profesores',
+        type: 'put',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: {
+            cedula: ced,
+            foto: imagenUrl
         }
     });
 

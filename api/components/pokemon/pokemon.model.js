@@ -6,6 +6,7 @@ let pokemonSchema = new mongoose.Schema({
     nombre: {type: String, required: true},
     tipo1: {type: String, required: true},
     tipo2: {type: String},
+    foto: {type: String}
 
 });
 

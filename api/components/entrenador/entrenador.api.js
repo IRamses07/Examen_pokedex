@@ -8,6 +8,7 @@ module.exports.registrar = function (req, res) {
         nombre: req.body.nombre,
         edad: req.body.edad,
         sexo: req.body.sexo,
+        foto: req.body.foto,
     });
 
     nuevoTrainer.save(function (error) {

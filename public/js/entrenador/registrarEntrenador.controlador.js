@@ -66,7 +66,8 @@ function registrarEntrenador() {
                 button: "Ok",
             });
 
-            setTrainerData(aTrainerData[0].value, aTrainerData[1].value, aTrainerData[2].value, document.querySelector('#sltGenero').value);
+            setTrainerData(aTrainerData[0].value, aTrainerData[1].value, aTrainerData[2].value,
+                 document.querySelector('#sltGenero').value, imagenUrl);
             limpiar();
         }
     }

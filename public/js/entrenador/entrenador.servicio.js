@@ -1,5 +1,5 @@
 
-function setTrainerData(trainer, name, age, gender) {
+function setTrainerData(trainer, name, age, gender, imagen) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrar_trainer',
@@ -12,7 +12,7 @@ function setTrainerData(trainer, name, age, gender) {
             nombre: name,
             edad: age,
             sexo: gender,
-            /*foto: 'http://res.cloudinary.com/dtz8agoc3/image/upload/v1531452055/perfil.png'*/ //cambiar
+            foto: imagen
         }
     });
 
